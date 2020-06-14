@@ -2,7 +2,10 @@
 Do you feel dealing with bad habits is getting on your nerves? Try using this app and it may help you! :)
 A basic Habit Tracking System. Tech Stack : HTML, CSS, JS, Node.js
 
-<img>
+Home View:
+![alt text] (./home.png?raw=true)
+Habit View:
+![alt text] (./habit.png?raw=true)
 
 # How-To-Use
 1. Clone this project
