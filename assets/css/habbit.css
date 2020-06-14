@@ -85,7 +85,7 @@ main{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: black;
+    background-color: gray;
 }
 
 /* Media Queries for max w 1200px */
