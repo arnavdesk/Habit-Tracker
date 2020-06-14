@@ -8,8 +8,13 @@
     const filterBtn = document.getElementById("filter")
     let currentDate;
     let sixtyDaysBefore;
-    // console.log(habitId);
 
+
+
+    // This function finds the current date 
+    // finds a date of sixty days before
+    // since the range of date filteration is 60 days
+    // adds min and max values to date picker
 
     function SetMinMaxDateOnDatePicker() {
         currentDate = moment().format('YYYY-MM-DD');
@@ -23,9 +28,11 @@
         endDate.value = currentDate;
     }
 
+    // call function to fix min max values
     SetMinMaxDateOnDatePicker();
 
 
+    // updates a particular date object which corresponds to task done in that day or not
     const updateThisDateInDb = async function (date, value) {
         const res = await fetch(`/update-db-date?id=${habitId}&date=${date}&value=${value}`)
         const data = await res.json();
@@ -34,6 +41,8 @@
 
 
 
+    //  this function helps in rendering the date list
+    // it sets some properties of all the dates so that user can interact properly
     const renderDaysList = function (count, recordTracker, endDate) {
         let i = 0;
         // const currentDate = moment().format('YYYY-MM-DD');
@@ -67,8 +76,6 @@
                 statusDiv.style.backgroundColor = "gray";
             }
 
-
-
             listElement.onclick = function () {
                 let value = 0;
                 if (statusDiv.style.backgroundColor == "gray") {
@@ -94,12 +101,14 @@
         }
     }
 
+    // Helps in fetching user from database so that we have access to date map.
     const fetchFromDB = async function (id) {
         const res = await fetch("/find-habit?id=" + id);
         const data = await res.json();
         return data;
     }
 
+    // On loading it calls some functions to render date list
     const renderOnLoad = async function (days, endDate) {
         const data = await fetchFromDB(habitId);
         const recordTracker = data.record_tracker;
@@ -108,6 +117,7 @@
     }
 
 
+    // helps in filtering by date.
     filterBtn.onclick = function () {
         let startDateMoment = moment(startDate.value);
         let endDateMoment = moment(endDate.value);

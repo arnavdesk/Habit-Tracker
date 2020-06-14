@@ -1,3 +1,4 @@
+<%# Home page contains list of all habits and capabilities to add more habits %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +21,7 @@
             <h1 class="heading">Habit Tracker</h1>
         </div>
 
+        <%# Adding a habit %>
         <div class="border-bottom-px habit-input-div padding-10px">
             <h4 class="subheadings">Add A Habit : </h4>
             <form class="habit-form" action="/add-habit" method="POST">
@@ -30,6 +32,7 @@
             </form>
         </div>
 
+        <%# Habits container %>
         <div class="habit-container border-bottom-px padding-10px">
             <div id="empty-notify">"Nothing to show here please add a habit to continue!"</div>
             <ul id="item-list">

@@ -1,3 +1,4 @@
+<%# Sample habit folder %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +11,7 @@
 
 <body>
 
+    <%# nav bar%>
     <nav>
         <a href="/">&larr; Home</a>
     </nav>
@@ -20,12 +22,14 @@
             <h1 class="heading"><%=habit.habit_name%> </h1>
         </div>
 
+        <%#Date Filter container%>
         <div class="date-container border-bottom-px padding-10px">
             <div>Start Date : <input type="date" name="start-date" id="start-date" class="date-picker"> </div>
             <div>End Date : <input type="date" name="end-date" id="end-date" class="date-picker"> </div>
             <button class="add" id="filter">Filter</button>
         </div>
 
+        <%# Habit container %>
         <div class="habit-container border-bottom-px padding-10px">
             <ul id="item-list">
                 <!-- <li class="list-item">
@@ -35,6 +39,7 @@
             </ul>
         </div>
 
+        <%#Key for knowing which color indicates what%>
         <div class="key :">
             <span>Key:</span>
             <span style="color: gray;">Unmarked</span>

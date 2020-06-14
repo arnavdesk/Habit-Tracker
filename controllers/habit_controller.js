@@ -1,5 +1,6 @@
 const Habit = require("../models/habit");
 
+// This function finds each and every habit in the list and renders it.
 module.exports.load = function (request, response) {
     Habit.find({}, function (err, habits) {
         if (err) {
@@ -12,6 +13,7 @@ module.exports.load = function (request, response) {
     })
 }
 
+// This function helps in adding a habit in list.
 module.exports.add = function (request, response) {
     request.body.record_tracker = {};
     request.body.user = "Arnav";
@@ -29,6 +31,7 @@ module.exports.add = function (request, response) {
     })
 }
 
+// This function helps in deleting a habit from list.
 module.exports.delete = function (request, response) {
     let id = request.query.id;
     Habit.findByIdAndDelete(id, function (err) {
@@ -42,6 +45,7 @@ module.exports.delete = function (request, response) {
     })
 }
 
+// Finds a habit by id given in query params and renders it
 module.exports.viewhabit = function (request, response) {
     let id = request.query.id;
     Habit.findById(id, function (err, habit) {
@@ -55,6 +59,7 @@ module.exports.viewhabit = function (request, response) {
     })
 }
 
+// Finds a habit by id given in query params and returns it's json object
 module.exports.fetchhabit = function (request, response) {
     let id = request.query.id;
     Habit.findById(id, function (err, habit) {
@@ -69,13 +74,14 @@ module.exports.fetchhabit = function (request, response) {
     })
 }
 
-
+// first find an element in database using id
 module.exports.updateDates = function (request, response) {
     let id = request.query.id;
     let date = request.query.date;
     let value = request.query.value;
     console.log(date, value, id);
 
+    //  Then add/update the date in map then finally update map
     Habit.findById(id, function (err, habit) {
         if (err) {
             console.log("Error in updating habit!!!!");
