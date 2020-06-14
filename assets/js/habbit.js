@@ -13,6 +13,7 @@
     }
 
 
+
     const renderDaysList = function (count, recordTracker) {
         let i = 0;
         while (i <= count) {
