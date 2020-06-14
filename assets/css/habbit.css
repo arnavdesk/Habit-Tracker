@@ -54,7 +54,40 @@ main{
     justify-content: center;
 }
 
+/* Date Filter */
+.date-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-picker{
+    border-radius: 5px;
+    border: 2px solid lightslategray;
+    font-size: 0.7em;
+}
+
+.add{
+    cursor: pointer;
+    font-size: 0.8em;
+    padding: 5px;
+    color: white;
+    background-color: #388E3C;
+    border-radius: 8px;
+    margin-left: 5px;
+    outline: none;
+}
+
+.add:hover{
+    background-color: #1B5E20;
+}
+
 /* Date List */
+.habbit-container{
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
 #item-list{
     min-height: 20px;
     padding: 0px;

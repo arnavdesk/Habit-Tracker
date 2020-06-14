@@ -48,6 +48,12 @@ main{
     margin: 10px 0px;
 }
 
+/* application heading div*/
+.app-heading-div{
+    display: flex;
+    justify-content: center;
+}
+
 /* Habbit input div */
 
 .habbit-form{
@@ -80,18 +86,6 @@ main{
     background-color: #1B5E20;
 }
 
-/* application heading div*/
-.app-heading-div{
-    display: flex;
-    justify-content: center;
-}
-
-
-@media screen and (max-width:1200px){
-    main{
-        width: 80%;
-    }
-}
 
 /* Habbits List */
 #item-list{
@@ -128,6 +122,15 @@ main{
 .delete a{
     color: black;
 }
+
+/* Media Queries for max w 1200px */
+
+@media screen and (max-width:1200px){
+    main{
+        width: 80%;
+    }
+}
+
 
 /* media quereis for screens below 786px */
 
