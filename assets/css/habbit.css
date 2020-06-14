@@ -15,6 +15,7 @@ body{
 }
 
 main{
+    margin-top: 50px;
     background-color: white;
     width: 50%;
     display: flex;
@@ -22,6 +23,29 @@ main{
     flex-direction: column;
     border: 2px solid lightslategray;
     max-height: 95vh;
+}
+
+/* Navigation bar */
+
+nav{
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 5px;
+    height: 30px;
+    position: fixed;
+    background-color: black;
+    color: white;
+}
+
+nav a{
+    font-size:  30px;
+    text-decoration: none;
+    color: white;
 }
 
 /* generic classes */
@@ -52,6 +76,12 @@ main{
 .app-heading-div{
     display: flex;
     justify-content: center;
+}
+
+.key{
+    font: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Date Filter */

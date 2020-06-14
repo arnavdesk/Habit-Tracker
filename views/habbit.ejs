@@ -10,10 +10,14 @@
 
 <body>
 
+    <nav>
+        <a href="/">&larr; Home</a>
+    </nav>
+
     <main>
         <%# Heading %>
         <div class="app-heading-div border-bottom-px padding-10px">
-            <h1 class="heading"><%=habbit.habbit_name%> Tracker</h1>
+            <h1 class="heading"><%=habbit.habbit_name%> </h1>
         </div>
 
         <div class="date-container border-bottom-px padding-10px">
@@ -29,6 +33,13 @@
                     <div class="status"></div>
                 </li> -->
             </ul>
+        </div>
+
+        <div class="key :">
+            <span>Key:</span>
+            <span style="color: gray;">Unmarked</span>
+            <span style="color: green;">Done</span>
+            <span style="color: red;">Not Done</span>
         </div>
     </main>
 

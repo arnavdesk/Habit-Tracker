@@ -8,32 +8,28 @@
     const filterBtn = document.getElementById("filter")
     let currentDate;
     let sixtyDaysBefore;
-    console.log(habbitId);
+    // console.log(habbitId);
 
 
     function SetMinMaxDateOnDatePicker() {
         currentDate = moment().format('YYYY-MM-DD');
         sixtyDaysBefore = moment(currentDate).subtract(60, 'days').format('YYYY-MM-DD');
-        console.log(sixtyDaysBefore);
+        // console.log(sixtyDaysBefore);
         startDate.setAttribute("max", currentDate)
         endDate.setAttribute("max", currentDate);
         startDate.setAttribute("min", sixtyDaysBefore)
         endDate.setAttribute("min", sixtyDaysBefore);
-        startDate.value = moment(currentDate).subtract(7, 'days').format('YYYY-MM-DD');
+        startDate.value = moment(currentDate).subtract(6, 'days').format('YYYY-MM-DD');
         endDate.value = currentDate;
     }
 
     SetMinMaxDateOnDatePicker();
 
 
-    startDate.onchange = function () {
-        console.log(startDate.value);
-    }
-
     const updateThisDateInDb = async function (date, value) {
         const res = await fetch(`/update-db-date?id=${habbitId}&date=${date}&value=${value}`)
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
     }
 
 
@@ -56,14 +52,14 @@
             statusDiv.setAttribute("class", "status");
 
             if (date in recordTracker) {
-                console.log(date + "  " + recordTracker[date])
-                if (recordTracker[date] == 0) {
+                // console.log(date + "  " + recordTracker[date])
+                if (recordTracker[date] == '0') {
                     statusDiv.style.backgroundColor = "red";
                 }
-                else if (recordTracker[date] == 1) {
+                else if (recordTracker[date] == '1') {
                     statusDiv.style.backgroundColor = "green";
                 }
-                else {
+                else if (recordTracker[date] == '-1') {
                     statusDiv.style.backgroundColor = "gray";
                 }
             }
@@ -71,27 +67,24 @@
                 statusDiv.style.backgroundColor = "gray";
             }
 
-            statusDiv.onclick = function () {
+
+
+            listElement.onclick = function () {
                 let value = 0;
-                console.log(this);
-                if (this.style.backgroundColor == "gray") {
-                    console.log("Hello")
-                    this.style.backgroundColor = "green"
+                if (statusDiv.style.backgroundColor == "gray") {
+                    statusDiv.style.backgroundColor = "green"
                     value = '1';
                 }
-                else if (this.style.backgroundColor == "green") {
-                    console.log("Hello")
-                    this.style.backgroundColor = "red"
+                else if (statusDiv.style.backgroundColor == "green") {
+                    statusDiv.style.backgroundColor = "red"
                     value = '0';
                 }
-                else if (this.style.backgroundColor == "red") {
-                    console.log("Hello")
-                    this.style.backgroundColor = "gray"
+                else if (statusDiv.style.backgroundColor == "red") {
+                    statusDiv.style.backgroundColor = "gray"
                     value = '-1';
                 }
                 updateThisDateInDb(date, value);
             }
-
 
             listElement.appendChild(dateDiv);
             listElement.appendChild(statusDiv);
@@ -110,7 +103,7 @@
     const renderOnLoad = async function (days, endDate) {
         const data = await fetchFromDB(habbitId);
         const recordTracker = data.record_tracker;
-        console.log(recordTracker);
+        // console.log(recordTracker);
         renderDaysList(days, recordTracker, endDate);
     }
 
