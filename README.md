@@ -2,10 +2,13 @@
 Do you feel dealing with bad habits is getting on your nerves? Try using this app and it may help you! :)
 A basic Habit Tracking System. Tech Stack : HTML, CSS, JS, Node.js
 
-Home View:
-![alt text] (./home.png?raw=true)
-Habit View:
-![alt text] (./habit.png?raw=true)
+<h2>Home View:</h2>
+
+![alt text](home.png)
+
+<h2>Habit View:</h2>
+
+![alt text](habit.png)
 
 # How-To-Use
 1. Clone this project
@@ -29,11 +32,11 @@ npm start or node index.js
    
 # Directory Structure and flow of The Code
 This code follows MVC pattern and hence everything is differentiated and well managed:
- /routes - containes all the routes.
- /assets - static js css and image files.
- /controller - controlls functions to connect to different views.
- /model - to store data in db we need models.
- /config - contains config files for mongoos or any other files being used.
- /views - used by ejs(templating engine) for server side rendering.
+<p>/routes - containes all the routes.</p>
+<p>/assets - static js css and image files.</p>
+<p>/controller - controlls functions to connect to different views.</p>
+<p>/model - to store data in db we need models.</p>
+<p>/config - contains config files for mongoos or any other files being used.</p>
+<p>/views - used by ejs(templating engine) for server side rendering.</p>
 
 Feel free to use and contirbute! :)
