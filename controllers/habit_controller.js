@@ -1,13 +1,13 @@
-const Habbit = require("../models/habbit");
+const Habit = require("../models/habit");
 
 module.exports.load = function (request, response) {
-    Habbit.find({}, function (err, habbits) {
+    Habit.find({}, function (err, habits) {
         if (err) {
-            console.log("Error in fetching habbits from DB");
+            console.log("Error in fetching habits from DB");
             return;
         }
         else {
-            return response.render('home', { habbit_list: habbits });
+            return response.render('home', { habit_list: habits });
         }
     })
 }
@@ -16,14 +16,14 @@ module.exports.add = function (request, response) {
     request.body.record_tracker = {};
     request.body.user = "Arnav";
     console.log(request.body);
-    Habbit.create(request.body, function (err, newHabbit) {
+    Habit.create(request.body, function (err, newhabit) {
         if (err) {
-            console.log("error in creating a habbit");
+            console.log("error in creating a habit");
             return;
         }
         else {
-            console.log("******New Habbit******")
-            console.log(newHabbit);
+            console.log("******New habit******")
+            console.log(newhabit);
             return response.redirect("back");
         }
     })
@@ -31,7 +31,7 @@ module.exports.add = function (request, response) {
 
 module.exports.delete = function (request, response) {
     let id = request.query.id;
-    Habbit.findByIdAndDelete(id, function (err) {
+    Habit.findByIdAndDelete(id, function (err) {
         if (err) {
             console.log("error in deletion");
             return;
@@ -42,29 +42,29 @@ module.exports.delete = function (request, response) {
     })
 }
 
-module.exports.viewHabbit = function (request, response) {
+module.exports.viewhabit = function (request, response) {
     let id = request.query.id;
-    Habbit.findById(id, function (err, habbit) {
+    Habit.findById(id, function (err, habit) {
         if (err) {
-            console.log("error in finding habbit");
+            console.log("error in finding habit");
             return;
         }
         else {
-            response.render("habbit.ejs", { "habbit": habbit });
+            response.render("habit.ejs", { "habit": habit });
         }
     })
 }
 
-module.exports.fetchHabbit = function (request, response) {
+module.exports.fetchhabit = function (request, response) {
     let id = request.query.id;
-    Habbit.findById(id, function (err, habbit) {
+    Habit.findById(id, function (err, habit) {
         if (err) {
-            console.log("error in finding habbit");
+            console.log("error in finding habit");
             return;
         }
         else {
             response.setHeader('Content-Type', 'application/json');
-            response.end(JSON.stringify(habbit));
+            response.end(JSON.stringify(habit));
         }
     })
 }
@@ -76,13 +76,13 @@ module.exports.updateDates = function (request, response) {
     let value = request.query.value;
     console.log(date, value, id);
 
-    Habbit.findById(id, function (err, habbit) {
+    Habit.findById(id, function (err, habit) {
         if (err) {
-            console.log("Error in updating Habbit!!!!");
+            console.log("Error in updating habit!!!!");
             return response.end('{ "status":"failed"}');
         }
         else {
-            const r_t = habbit.record_tracker;
+            const r_t = habit.record_tracker;
             if (date in r_t) {
                 r_t[date] = value;
             }
@@ -90,9 +90,9 @@ module.exports.updateDates = function (request, response) {
                 r_t.set(date, value);
             }
             console.log(r_t);
-            Habbit.updateOne({ "_id": id }, { $set: { record_tracker: r_t } }, function (err) {
+            Habit.updateOne({ "_id": id }, { $set: { record_tracker: r_t } }, function (err) {
                 if (err) {
-                    console.log("Error in updating Habbit!!!!");
+                    console.log("Error in updating habit!!!!");
                     return response.end('{ "status":"failed"}');
                 }
                 else {

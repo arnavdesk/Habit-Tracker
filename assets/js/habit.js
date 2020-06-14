@@ -2,13 +2,13 @@
 
     const daysList = document.getElementById("item-list");
     const url = new URL(window.location.href);
-    const habbitId = url.searchParams.get("id");
+    const habitId = url.searchParams.get("id");
     const startDate = document.getElementById("start-date");
     const endDate = document.getElementById("end-date");
     const filterBtn = document.getElementById("filter")
     let currentDate;
     let sixtyDaysBefore;
-    // console.log(habbitId);
+    // console.log(habitId);
 
 
     function SetMinMaxDateOnDatePicker() {
@@ -27,7 +27,7 @@
 
 
     const updateThisDateInDb = async function (date, value) {
-        const res = await fetch(`/update-db-date?id=${habbitId}&date=${date}&value=${value}`)
+        const res = await fetch(`/update-db-date?id=${habitId}&date=${date}&value=${value}`)
         const data = await res.json();
         // console.log(data);
     }
@@ -95,13 +95,13 @@
     }
 
     const fetchFromDB = async function (id) {
-        const res = await fetch("/find-habbit?id=" + id);
+        const res = await fetch("/find-habit?id=" + id);
         const data = await res.json();
         return data;
     }
 
     const renderOnLoad = async function (days, endDate) {
-        const data = await fetchFromDB(habbitId);
+        const data = await fetchFromDB(habitId);
         const recordTracker = data.record_tracker;
         // console.log(recordTracker);
         renderDaysList(days, recordTracker, endDate);

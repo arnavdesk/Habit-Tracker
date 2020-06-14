@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const habbitSchema = new mongoose.Schema({
+const habitSchema = new mongoose.Schema({
     user: {
         type: String,
         required: true
     },
-    habbit_name: {
+    habit_name: {
         type: String,
         required: true
     },
@@ -14,6 +14,6 @@ const habbitSchema = new mongoose.Schema({
     }
 })
 
-const Habbit = mongoose.model("Habbit", habbitSchema);
+const Habit = mongoose.model("Habit", habitSchema);
 
-module.exports = Habbit;
+module.exports = Habit;

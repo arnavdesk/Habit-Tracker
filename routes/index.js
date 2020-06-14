@@ -1,19 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
-const habbitController = require("../controllers/habbit_controller");
+const habitController = require("../controllers/habit_controller");
 
 
-router.get("/", habbitController.load);
+router.get("/", habitController.load);
 
-router.post("/add-habbit", habbitController.add);
+router.post("/add-habit", habitController.add);
 
-router.get("/delete-habbit", habbitController.delete);
+router.get("/delete-habit", habitController.delete);
 
-router.get("/view-habbit", habbitController.viewHabbit);
+router.get("/view-habit", habitController.viewhabit);
 
-router.get("/find-habbit", habbitController.fetchHabbit);
+router.get("/find-habit", habitController.fetchhabit);
 
-router.get("/update-db-date", habbitController.updateDates);
+router.get("/update-db-date", habitController.updateDates);
 
 module.exports = router;

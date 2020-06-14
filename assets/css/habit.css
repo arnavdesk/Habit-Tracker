@@ -113,7 +113,7 @@ nav a{
 }
 
 /* Date List */
-.habbit-container{
+.habit-container{
     max-height: 60vh;
     overflow-y: scroll;
 }

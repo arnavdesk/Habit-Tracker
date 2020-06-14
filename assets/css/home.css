@@ -78,13 +78,13 @@ nav a{
     justify-content: center;
 }
 
-/* Habbit input div */
+/* habit input div */
 
-.habbit-form{
+.habit-form{
     display: flex;
 }
 
-.habbit-details-input{
+.habit-details-input{
     font-size: 1em;
     padding: 5px 5px;
     border: 0px;
@@ -111,7 +111,7 @@ nav a{
 }
 
 
-/* Habbits List */
+/* habits List */
 #item-list{
     min-height: 20px;
     padding: 0px;
@@ -139,7 +139,7 @@ nav a{
     border-bottom: 1px solid lightslategray;
 }
 
-.habbit{
+.habit{
     flex-grow: 1;
 }
 

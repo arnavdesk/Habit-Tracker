@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habbit Tracker</title>
+    <title>Habit Tracker</title>
     <link rel="stylesheet" href="/css/home.css">
 </head>
 
@@ -17,26 +17,26 @@
     <main>
         <%# Heading %>
         <div class="app-heading-div border-bottom-px padding-10px">
-            <h1 class="heading">Habbit Tracker</h1>
+            <h1 class="heading">Habit Tracker</h1>
         </div>
 
-        <div class="border-bottom-px habbit-input-div padding-10px">
-            <h4 class="subheadings">Add A Habbit : </h4>
-            <form class="habbit-form" action="/add-habbit" method="POST">
-                <input type="text" name="habbit_name" class="habbit-details-input" placeholder="Drink 4 liters of h2o"
+        <div class="border-bottom-px habit-input-div padding-10px">
+            <h4 class="subheadings">Add A Habit : </h4>
+            <form class="habit-form" action="/add-habit" method="POST">
+                <input type="text" name="habit_name" class="habit-details-input" placeholder="Drink 4 liters of h2o"
                     required>
                 <button class="center-align add" type="submit"><i class="fas fa-plus"></i> ADD
                     TASK</button>
             </form>
         </div>
 
-        <div class="habbit-container border-bottom-px padding-10px">
-            <div id="empty-notify">"Nothing to show here please add a Habbit to continue!"</div>
+        <div class="habit-container border-bottom-px padding-10px">
+            <div id="empty-notify">"Nothing to show here please add a habit to continue!"</div>
             <ul id="item-list">
-                <% for (const it of habbit_list){ %>
-                <li onclick="location.href='/view-habbit/?id=<%=it._id%>'" class="list-item">
-                    <div class="habbit"><i class="far fa-clipboard"></i> <%=it.habbit_name%></div>
-                    <div class="delete"><a href="/delete-habbit/?id=<%=it._id%>"><i class="fas fa-trash"></i></a>
+                <% for (const it of habit_list){ %>
+                <li onclick="location.href='/view-habit/?id=<%=it._id%>'" class="list-item">
+                    <div class="habit"><i class="far fa-clipboard"></i> <%=it.habit_name%></div>
+                    <div class="delete"><a href="/delete-habit/?id=<%=it._id%>"><i class="fas fa-trash"></i></a>
                     </div>
                 </li>
                 <% } %>

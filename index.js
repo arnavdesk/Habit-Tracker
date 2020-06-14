@@ -7,7 +7,7 @@ const port = 8000;
 
 
 // Import model for using it further
-const Task = require("./models/habbit");
+const Task = require("./models/habit");
 
 // Require DB connection
 const db = require("./config/mongoose");

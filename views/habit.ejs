@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=habbit.habbit_name%></title>
-    <link rel="stylesheet" href="/css/habbit.css">
+    <title><%=habit.habit_name%></title>
+    <link rel="stylesheet" href="/css/habit.css">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <main>
         <%# Heading %>
         <div class="app-heading-div border-bottom-px padding-10px">
-            <h1 class="heading"><%=habbit.habbit_name%> </h1>
+            <h1 class="heading"><%=habit.habit_name%> </h1>
         </div>
 
         <div class="date-container border-bottom-px padding-10px">
@@ -26,7 +26,7 @@
             <button class="add" id="filter">Filter</button>
         </div>
 
-        <div class="habbit-container border-bottom-px padding-10px">
+        <div class="habit-container border-bottom-px padding-10px">
             <ul id="item-list">
                 <!-- <li class="list-item">
                     <div class="date-div"></div>
@@ -44,7 +44,7 @@
     </main>
 
     <script src="/js/moment.js"></script>
-    <script src="/js/habbit.js"></script>
+    <script src="/js/habit.js"></script>
 
 </body>
 
