@@ -32,11 +32,11 @@ npm start or node index.js
    
 # Directory Structure and flow of The Code
 This code follows MVC pattern and hence everything is differentiated and well managed:
- /routes - containes all the routes.
- /assets - static js css and image files.
- /controller - controlls functions to connect to different views.
- /model - to store data in db we need models.
- /config - contains config files for mongoos or any other files being used.
- /views - used by ejs(templating engine) for server side rendering.
+<p>/routes - containes all the routes.</p>
+<p>/assets - static js css and image files.</p>
+<p>/controller - controlls functions to connect to different views.</p>
+<p>/model - to store data in db we need models.</p>
+<p>/config - contains config files for mongoos or any other files being used.</p>
+<p>/views - used by ejs(templating engine) for server side rendering.</p>
 
 Feel free to use and contirbute! :)
