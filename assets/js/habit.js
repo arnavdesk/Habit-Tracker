@@ -57,6 +57,12 @@
             dateDiv.setAttribute("class", "date-div");
             dateDiv.innerHTML = fromattedDate;
 
+            // Mark the date as current date
+            if (moment(endDate).subtract(i, 'days').valueOf() == moment(currentDate).valueOf()) {
+                dateDiv.innerHTML += " (TODAY)";
+                listElement.style.border = " 2px solid lightslategray";
+            }
+
             const statusDiv = document.createElement("div");
             statusDiv.setAttribute("class", "status");
 
