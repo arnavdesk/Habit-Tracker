@@ -34,9 +34,9 @@ npm start or node index.js
 This code follows MVC pattern and hence everything is differentiated and well managed:
 <p>/routes - containes all the routes.</p>
 <p>/assets - static js css and image files.</p>
-<p>/controller - controlls functions to connect to different views.</p>
+<p>/controller - contains functions to connect to different views.</p>
 <p>/model - to store data in db we need models.</p>
 <p>/config - contains config files for mongoos or any other files being used.</p>
 <p>/views - used by ejs(templating engine) for server side rendering.</p>
 
-Feel free to use and contirbute! :)
+Feel free to use and contribute! :)
